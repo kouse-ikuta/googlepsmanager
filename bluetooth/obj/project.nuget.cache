@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "djs9zEb2OUo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kouse\\source\\repos\\bluetooth\\bluetooth\\bluetooth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kouse\\.nuget\\packages\\32feet.net\\3.5.0\\32feet.net.3.5.0.nupkg.sha512",
+    "C:\\Users\\kouse\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\kouse\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "パッケージ '32feet.NET 3.5.0' はプロジェクトのターゲット フレームワーク 'net6.0' ではなく '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' を使用して復元されました。このパッケージは、使用しているプロジェクトとの完全な互換性がない可能性があります。",
+      "libraryId": "32feet.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
