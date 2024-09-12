@@ -1,0 +1,1 @@
+androidとのbluetooth通信のためにC#で実装しました
