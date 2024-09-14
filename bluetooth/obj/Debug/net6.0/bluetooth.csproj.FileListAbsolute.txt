@@ -17,3 +17,4 @@ C:\Users\kouse\source\repos\bluetooth\bluetooth\obj\Debug\net6.0\bluetooth.genru
 C:\Users\kouse\source\repos\bluetooth\bluetooth\obj\Debug\net6.0\ref\bluetooth.dll
 C:\Users\kouse\source\repos\bluetooth\bluetooth\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\kouse\source\repos\bluetooth\bluetooth\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kouse\source\repos\bluetooth\bluetooth\obj\Debug\net6.0\bluetooth.sourcelink.json

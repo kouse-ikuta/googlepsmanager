@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using InTheHand.Net.Sockets;
 using InTheHand.Net.Bluetooth;
 using InTheHand.Net;
@@ -30,7 +32,16 @@ class Program
             client.Connect(new BluetoothEndPoint(BluetoothAddress.Parse(targetAddress), serviceUuid));
             Console.WriteLine($"デバイス {targetAddress} に接続しました");
 
-            // メッセージの送受信をループで行う
+            // ネットワークストリームを取得
+            var stream = client.GetStream();
+
+            // キャンセルトークンの設定
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+            // 受信タスクの開始
+            Task receiveTask = Task.Run(() => ReceiveMessages(stream, cts.Token), cts.Token);
+
+            // 送信ループの開始（メインスレッド）
             while (true)
             {
                 // メッセージを送信
@@ -39,17 +50,16 @@ class Program
                 if (message.ToLower() == "exit")
                 {
                     Console.WriteLine("接続を終了します...");
+                    cts.Cancel();  // 受信タスクをキャンセル
                     break;  // "exit"と入力されたらループを抜けて終了
                 }
 
-                SendMessage(client, message);
-
-                // サーバーからのメッセージを受信
-                ReceiveMessage(client);
+                SendMessage(stream, message);
             }
 
             // 接続を閉じる
             client.Close();
+            cts.Cancel();  // 念のためキャンセルを再度呼び出す
         }
         catch (Exception ex)
         {
@@ -58,11 +68,10 @@ class Program
     }
 
     // メッセージを送信する関数
-    static void SendMessage(BluetoothClient client, string message)
+    static void SendMessage(System.IO.Stream stream, string message)
     {
         try
         {
-            var stream = client.GetStream();
             byte[] messageBytes = Encoding.ASCII.GetBytes(message);
             stream.Write(messageBytes, 0, messageBytes.Length);
             Console.WriteLine($"送信: {message}");
@@ -74,19 +83,35 @@ class Program
     }
 
     // メッセージを受信する関数
-    static void ReceiveMessage(BluetoothClient client)
+    static void ReceiveMessages(System.IO.Stream stream, CancellationToken token)
     {
         try
         {
-            var stream = client.GetStream();
             byte[] buffer = new byte[1024];
-            int bytesRead = stream.Read(buffer, 0, buffer.Length);
-            string receivedMessage = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-            Console.WriteLine($"サーバーからのメッセージ: {receivedMessage}");
+            while (!token.IsCancellationRequested)
+            {
+                if (stream.CanRead)
+                {
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead > 0)
+                    {
+                        string receivedMessage = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                        Console.WriteLine($"\nサーバーからのメッセージ: {receivedMessage}");
+                        Console.Write("送信するメッセージを入力してください（終了するには 'exit' と入力）: ");
+                    }
+                }
+                else
+                {
+                    Thread.Sleep(100);  // CPU負荷を下げるために少し待機
+                }
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"メッセージの受信に失敗しました: {ex.Message}");
+            if (!token.IsCancellationRequested)
+            {
+                Console.WriteLine($"メッセージの受信に失敗しました: {ex.Message}");
+            }
         }
     }
 }

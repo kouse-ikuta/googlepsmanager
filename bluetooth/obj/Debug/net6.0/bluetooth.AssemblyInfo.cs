@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bluetooth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a193bd3b18393b870b8f3c4429579fcf3745bdf1")]
 [assembly: System.Reflection.AssemblyProductAttribute("bluetooth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bluetooth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
