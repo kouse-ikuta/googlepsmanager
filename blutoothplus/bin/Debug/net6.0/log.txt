@@ -1,0 +1,42 @@
+2024/09/19 1:01:55 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:02:07 [Debug] Client connected from 127.0.0.1:50704 
+2024/09/19 1:02:07 [Debug] 548 bytes read 
+2024/09/19 1:02:08 [Debug] Building Hybi-14 Response 
+2024/09/19 1:02:08 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+リソースを解放しました。
+2024/09/19 1:02:21 [Debug] Sent 4 bytes 
+2024/09/19 1:15:51 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:15:54 [Debug] Client connected from 127.0.0.1:51010 
+2024/09/19 1:15:54 [Debug] 548 bytes read 
+2024/09/19 1:15:54 [Debug] Building Hybi-14 Response 
+2024/09/19 1:15:54 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:16:01 [Debug] Client connected from 127.0.0.1:51017 
+2024/09/19 1:16:01 [Debug] 548 bytes read 
+2024/09/19 1:16:01 [Debug] Building Hybi-14 Response 
+2024/09/19 1:16:01 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:16:10 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: http
+Bluetooth経由で送信: http
+2024/09/19 1:16:13 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+2024/09/19 1:16:13 [Debug] Sent 4 bytes 
+2024/09/19 1:16:13 [Debug] Sent 4 bytes 
+リソースを解放しました。
+WebSocket接続が閉じられました
+WebSocket接続が閉じられました
+2024/09/19 1:16:13 [Debug] 8 bytes read 
+2024/09/19 1:16:55 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました

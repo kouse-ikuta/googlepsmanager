@@ -1,0 +1,425 @@
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+Bluetooth接続に失敗しました: 要求したアドレスのコンテキストが無効です。 B47064DDAB89:00001101-0000-1000-8000-00805f9b34fb (0)
+2024/09/19 1:02:44 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:02:49 [Debug] Client connected from 127.0.0.1:50714 
+2024/09/19 1:02:49 [Debug] 548 bytes read 
+2024/09/19 1:02:49 [Debug] Building Hybi-14 Response 
+2024/09/19 1:02:49 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:02:59 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: ssss
+Bluetooth経由で送信: ssss
+Bluetoothから受信したメッセージ: Hello from Android!
+2024/09/19 1:03:04 [Debug] Sent 21 bytes 
+2024/09/19 1:03:23 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:03:23 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+リソースを解放しました。
+2024/09/19 1:03:33 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:03:35 [Debug] Client connected from 127.0.0.1:50741 
+2024/09/19 1:03:35 [Debug] 548 bytes read 
+2024/09/19 1:03:35 [Debug] Building Hybi-14 Response 
+2024/09/19 1:03:35 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:03:41 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: ss
+Bluetoothに接続されていません。メッセージを送信できません。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:03:49 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:03:49 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+リソースを解放しました。
+2024/09/19 1:03:57 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:04:01 [Debug] Client connected from 127.0.0.1:50748 
+2024/09/19 1:04:01 [Debug] 548 bytes read 
+2024/09/19 1:04:01 [Debug] Building Hybi-14 Response 
+2024/09/19 1:04:01 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:04:07 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: ssss
+Bluetooth経由で送信: ssss
+2024/09/19 1:04:15 [Debug] 11 bytes read 
+WebSocketで受信したメッセージ: hello
+Bluetooth経由で送信: hello
+2024/09/19 1:04:55 [Debug] 8 bytes read 
+リソースを解放しました。
+2024/09/19 1:11:26 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:11:38 [Debug] Client connected from 127.0.0.1:50867 
+2024/09/19 1:11:38 [Debug] 548 bytes read 
+2024/09/19 1:11:39 [Debug] Building Hybi-14 Response 
+2024/09/19 1:11:39 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:11:48 [Debug] 11 bytes read 
+WebSocketで受信したメッセージ: hello
+Bluetooth経由で送信: hello
+2024/09/19 1:11:57 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: good
+Bluetooth経由で送信: good
+2024/09/19 1:12:08 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:12:08 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:13:05 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:13:08 [Debug] Client connected from 127.0.0.1:50910 
+2024/09/19 1:13:08 [Debug] 548 bytes read 
+2024/09/19 1:13:09 [Debug] Building Hybi-14 Response 
+2024/09/19 1:13:09 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:13:25 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: htr
+Bluetooth経由で送信: htr
+2024/09/19 1:13:51 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:13:51 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:14:17 [Debug] Client connected from 127.0.0.1:50952 
+2024/09/19 1:14:17 [Debug] 548 bytes read 
+2024/09/19 1:14:17 [Debug] Building Hybi-14 Response 
+2024/09/19 1:14:17 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:14:25 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: htt
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:14:38 [Debug] Client connected from 127.0.0.1:50964 
+2024/09/19 1:14:38 [Debug] 548 bytes read 
+2024/09/19 1:14:38 [Debug] Building Hybi-14 Response 
+2024/09/19 1:14:38 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:14:43 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: htt
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:14:47 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:14:47 [Debug] 8 bytes read 
+2024/09/19 1:14:47 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:14:47 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:14:56 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:15:02 [Debug] Client connected from 127.0.0.1:50980 
+2024/09/19 1:15:02 [Debug] 548 bytes read 
+2024/09/19 1:15:02 [Debug] Building Hybi-14 Response 
+2024/09/19 1:15:02 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:15:13 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: rrr
+Bluetooth経由で送信: rrr
+2024/09/19 1:15:23 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:15:23 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:15:57 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:17:06 [Debug] Client connected from 127.0.0.1:51062 
+2024/09/19 1:17:06 [Debug] 548 bytes read 
+2024/09/19 1:17:06 [Debug] Building Hybi-14 Response 
+2024/09/19 1:17:06 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10049): 要求したアドレスのコンテキストが無効です。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10048): 通常、各ソケット アドレスに対してプロトコル、ネットワーク アドレス、またはポートのどれか 1 つのみを使用できます。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:17:27 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: htti
+Bluetoothに接続されていません。メッセージを送信できません。
+Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10048): 通常、各ソケット アドレスに対してプロトコル、ネットワーク アドレス、またはポートのどれか 1 つのみを使用できます。 B47064DDAB89:fa87c0d0-afac-11de-8a39-0800200c9a66 (0)
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at InTheHand.Net.Sockets.Win32BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at InTheHand.Net.Sockets.BluetoothClient.Connect(BluetoothEndPoint remoteEP)
+   at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
+2024/09/19 1:17:31 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:17:31 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:17:37 [Debug] Client connected from 127.0.0.1:51084 
+2024/09/19 1:17:37 [Debug] 548 bytes read 
+2024/09/19 1:17:37 [Debug] Building Hybi-14 Response 
+2024/09/19 1:17:37 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:17:43 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: http
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:17:47 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:17:47 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:18:09 [Debug] Client connected from 127.0.0.1:51103 
+2024/09/19 1:18:09 [Debug] 548 bytes read 
+2024/09/19 1:18:09 [Debug] Building Hybi-14 Response 
+2024/09/19 1:18:09 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:18:17 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: rrr
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:18:25 [Debug] Client connected from 127.0.0.1:51113 
+2024/09/19 1:18:25 [Debug] 548 bytes read 
+2024/09/19 1:18:25 [Debug] Building Hybi-14 Response 
+2024/09/19 1:18:25 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:18:29 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: rrr
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:19:08 [Debug] Client connected from 127.0.0.1:51141 
+2024/09/19 1:19:08 [Debug] 548 bytes read 
+2024/09/19 1:19:08 [Debug] Building Hybi-14 Response 
+2024/09/19 1:19:08 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:19:17 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: rrr
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:19:29 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:19:29 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:19:29 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:19:29 [Debug] 8 bytes read 
+2024/09/19 1:19:29 [Debug] 8 bytes read 
+リソースの解放中にエラーが発生しました: System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at Program.Cleanup() in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 252
+2024/09/19 1:19:37 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:19:40 [Debug] Client connected from 127.0.0.1:51154 
+2024/09/19 1:19:40 [Debug] 548 bytes read 
+2024/09/19 1:19:40 [Debug] Building Hybi-14 Response 
+2024/09/19 1:19:40 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:19:51 [Debug] 9 bytes read 
+WebSocketで受信したメッセージ: rrr
+Bluetooth経由で送信: rrr
+2024/09/19 1:19:56 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:19:56 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+リソースを解放しました。
+2024/09/19 1:26:50 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:26:52 [Debug] Client connected from 127.0.0.1:51231 
+2024/09/19 1:26:52 [Debug] 548 bytes read 
+2024/09/19 1:26:52 [Debug] Building Hybi-14 Response 
+2024/09/19 1:26:52 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:27:00 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: ss
+Bluetooth経由で送信: ss
+Bluetoothから受信したメッセージ: Hello from Android!
+WebSocket経由で送信: Hello from Android!
+2024/09/19 1:27:07 [Debug] Sent 21 bytes 
+2024/09/19 1:27:22 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: tt
+Bluetooth経由で送信: tt
+Bluetoothから受信したメッセージ: Hello from Android!
+WebSocket経由で送信: Hello from Android!
+2024/09/19 1:27:47 [Debug] Sent 21 bytes 
+2024/09/19 1:27:55 [Debug] 10 bytes read 
+WebSocketで受信したメッセージ: exit
+終了コマンドを受信しました。プログラムを終了します。
+リソースを解放しました。
+2024/09/19 1:27:56 [Debug] Sent 4 bytes 
+WebSocket接続が閉じられました
+2024/09/19 1:27:59 [Debug] Client connected from 127.0.0.1:51243 
+2024/09/19 1:27:59 [Debug] 548 bytes read 
+2024/09/19 1:27:59 [Debug] Building Hybi-14 Response 
+2024/09/19 1:27:59 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:28:08 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: ee
+Bluetoothに接続されていません。メッセージを送信できません。
+2024/09/19 1:28:24 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: ss
+Bluetoothに接続されていません。メッセージを送信できません。
+リソースを解放しました。
+WebSocket接続が閉じられました
+
+WebSocket接続が閉じられました
+2024/09/19 1:29:44 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/19 1:29:52 [Debug] Client connected from 127.0.0.1:51268 
+2024/09/19 1:29:52 [Debug] 548 bytes read 
+2024/09/19 1:29:52 [Debug] Building Hybi-14 Response 
+2024/09/19 1:29:52 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+2024/09/19 1:29:57 [Debug] 8 bytes read 
+WebSocketで受信したメッセージ: ss
+Bluetooth経由で送信: ss
+Bluetoothから受信したメッセージ: Hello from Android!
+WebSocket経由で送信: Hello from Android!
+2024/09/19 1:30:03 [Debug] Sent 21 bytes 
+2024/09/19 1:30:07 [Debug] 8 bytes read 
+リソースを解放しました。

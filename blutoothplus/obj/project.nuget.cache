@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "SHZPJXUFoAE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kouse\\source\\repos\\blutoothplus\\blutoothplus\\blutoothplus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kouse\\.nuget\\packages\\fleck\\1.2.0\\fleck.1.2.0.nupkg.sha512",
+    "C:\\Users\\kouse\\.nuget\\packages\\inthehand.net.bluetooth\\4.1.44\\inthehand.net.bluetooth.4.1.44.nupkg.sha512",
+    "C:\\Users\\kouse\\.nuget\\packages\\linux.bluetooth\\5.66.0\\linux.bluetooth.5.66.0.nupkg.sha512",
+    "C:\\Users\\kouse\\.nuget\\packages\\tmds.dbus\\0.15.0\\tmds.dbus.0.15.0.nupkg.sha512"
+  ],
+  "logs": []
+}

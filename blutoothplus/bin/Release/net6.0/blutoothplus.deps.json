@@ -1,0 +1,93 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "blutoothplus/1.0.0": {
+        "dependencies": {
+          "Fleck": "1.2.0",
+          "InTheHand.Net.Bluetooth": "4.1.44"
+        },
+        "runtime": {
+          "blutoothplus.dll": {}
+        }
+      },
+      "Fleck/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/Fleck.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "InTheHand.Net.Bluetooth/4.1.44": {
+        "dependencies": {
+          "Linux.Bluetooth": "5.66.0"
+        },
+        "runtime": {
+          "lib/net6.0/InTheHand.Net.Bluetooth.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.44.0"
+          }
+        }
+      },
+      "Linux.Bluetooth/5.66.0": {
+        "dependencies": {
+          "Tmds.DBus": "0.15.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Linux.Bluetooth.dll": {
+            "assemblyVersion": "5.66.0.0",
+            "fileVersion": "5.66.0.0"
+          }
+        }
+      },
+      "Tmds.DBus/0.15.0": {
+        "runtime": {
+          "lib/net6.0/Tmds.DBus.dll": {
+            "assemblyVersion": "0.15.0.0",
+            "fileVersion": "0.15.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "blutoothplus/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Fleck/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
+      "path": "fleck/1.2.0",
+      "hashPath": "fleck.1.2.0.nupkg.sha512"
+    },
+    "InTheHand.Net.Bluetooth/4.1.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gRPCmVpYklhn/JkiJpoV2ZExw740csai+o+IgsUn/4igeMOO848uUIXTaN8UDSMGj69T9ZeLYCTYF/dHaJnteg==",
+      "path": "inthehand.net.bluetooth/4.1.44",
+      "hashPath": "inthehand.net.bluetooth.4.1.44.nupkg.sha512"
+    },
+    "Linux.Bluetooth/5.66.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-psisT3X/CjSGdKCHLb2IzcYGFSCp8q/yZKJLp0X8Fzaeb0MQHkHURpzltBsDOXbuABZ2qWW1i3oaqfkCfTPxwg==",
+      "path": "linux.bluetooth/5.66.0",
+      "hashPath": "linux.bluetooth.5.66.0.nupkg.sha512"
+    },
+    "Tmds.DBus/0.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11BxHGh+8hwXNdcavX7BxNW5Qr6AC36ABYDcqvZ3bDS7alXI+O95/x0ExoVWWWxjAVTnvmDRtW1Nd3uObPIsVg==",
+      "path": "tmds.dbus/0.15.0",
+      "hashPath": "tmds.dbus.0.15.0.nupkg.sha512"
+    }
+  }
+}
