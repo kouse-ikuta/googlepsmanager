@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bluetooth Bridge</title>
+    <script src="popup.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+            width: 310px;
+            background-color: #f0f8f5; /* 白に近い薄い黄緑 */
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #006400; /* ダークグリーン */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #startButton {
+            background-color: #7CFC00; /* LawnGreen */
+        }
+        #startButton:hover {
+            background-color: #66CD00; /* 黄緑の濃い色 */
+        }
+        #connectButton {
+            background-color: #32CD32; /* LimeGreen */
+        }
+        #connectButton:hover {
+            background-color: #228B22; /* ForestGreen */
+        }
+        #sendButton {
+            background-color: #9ACD32; /* YellowGreen */
+        }
+        #sendButton:hover {
+            background-color: #6B8E23; /* OliveDrab */
+        }
+        #exitButton {
+            background-color: #ADFF2F; /* GreenYellow */
+        }
+        #exitButton:hover {
+            background-color: #7FFF00; /* Chartreuse */
+        }
+        #messageToSend {
+            width: 90%;
+            height: 50px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #90EE90; /* LightGreen */
+            border-radius: 5px;
+            font-size: 14px;
+            resize: none;
+            background-color: #F5FFFA; /* MintCream */
+        }
+        #receivedMessages {
+            margin-top: 20px;
+            background-color: #F0FFF0; /* HoneyDew */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #receivedMessages h2 {
+            margin-top: 0;
+            color: #006400; /* ダークグリーン */
+        }
+        #messagesList {
+            list-style-type: none;
+            padding: 0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        #messagesList li {
+            background-color: #F5FFFA; /* MintCream */
+            margin-bottom: 5px;
+            padding: 8px;
+            border-radius: 5px;
+            word-wrap: break-word;
+            border: 1px solid #90EE90; /* LightGreen */
+        }
+    </style>
+</head>
+<body>
+    <h1>PASSWORD MANEGE</h1>
+    <button id="startButton">C#プログラムを起動</button>
+    <button id="connectButton">WebSocketに接続</button>
+    <textarea id="messageToSend" placeholder="送信するメッセージ"></textarea>
+    <button id="sendButton">送信</button>
+    
+    <div id="receivedMessages">
+        <h2>受信メッセージ</h2>
+        <ul id="messagesList"></ul>
+    </div>
+</body>
+</html>
