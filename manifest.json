@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Login Info Grabber",
+    "version": "1.0",
+    "description": "Automatically grab ID and password from login forms.",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
