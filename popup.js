@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const testMessageButton = document.getElementById('testMessageButton');
     const form = document.getElementById('textForm'); // フォームを取得
     const responseArea = document.getElementById('responseArea'); // 応答表示エリア
+    const input = document.getElementById('inputButton'); // 自動入力
 
     // C#プログラムを起動し、WebSocket接続を開始
     startBluetoothBridge();
@@ -70,6 +71,68 @@ document.addEventListener('DOMContentLoaded', function () {
         sendTestMessage();
     });
 
+    // 自動入力ボタンのクリックイベント
+    input.addEventListener('click', function () {
+        // 現在のタブのURLを取得
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            let currentUrl = tabs[0].url; // 現在開いているタブのURL
+            let currentTabId = tabs[0].id; // 現在開いているタブのID
+
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.send(currentUrl); // WebSocketでURLを送信
+                console.log("WebSocket経由でテストメッセージを送信しました: " + currentUrl);
+                alert('テストメッセージを送信しました');
+            } else {
+                console.log("WebSocketが接続されていません");
+                alert('WebSocketが接続されていません');
+                return;
+            }
+
+            const messageHandler = function (event) {
+                if (event.data === 'NO') {
+                    // NOを受信した場合のエラーハンドリング
+                    console.error('NOを受信しました。操作をキャンセルします。');
+                    alert('サーバーからNOが返されました。操作がキャンセルされました。');
+                    socket.removeEventListener('message', messageHandler);
+                } else {
+                    // event.data に id,pass が含まれている場合
+                    const [id, pass] = event.data.split(','); // idとpassを分割
+
+                    // 現在のタブにスクリプトを実行してIDとパスワードを入力する
+                    chrome.scripting.executeScript({
+                        target: { tabId: currentTabId },
+                        func: (id, pass) => {
+                            // IDを入力
+                            let usernameInput = document.querySelector('input[type="text"], input[type="email"]');
+                            if (usernameInput) {
+                                usernameInput.value = id;
+                                console.log("IDが入力されました: " + id);
+                            } else {
+                                console.error("ID入力欄が見つかりませんでした");
+                            }
+
+                            // パスワードを入力
+                            let passwordInput = document.querySelector('input[type="password"]');
+                            if (passwordInput) {
+                                passwordInput.value = pass;
+                                console.log("パスワードが入力されました: " + pass);
+                            } else {
+                                console.error("パスワード入力欄が見つかりませんでした");
+                            }
+                        },
+                        args: [id, pass] // 分割したidとpassを引数として渡す
+                    });
+
+                    // イベントリスナーを削除して、処理の終了
+                    socket.removeEventListener('message', messageHandler);
+                }
+            };
+
+            socket.addEventListener('message', messageHandler);
+        });
+    });
+
+
     // フォームが存在する場合に送信時の処理を設定
     if (form) {
         form.addEventListener('submit', function (event) {
@@ -97,7 +160,7 @@ function waitForResponse(responseArea) {
     let responseReceived = false;
 
     // WebSocketのメッセージ受信イベントを設定
-    const messageHandler = function(event) {
+    const messageHandler = function (event) {
         responseReceived = true;
         responseArea.innerHTML = `<p>受信メッセージ: ${event.data}</p>`;
         console.log('受信メッセージ: ' + event.data);
@@ -109,7 +172,7 @@ function waitForResponse(responseArea) {
     socket.addEventListener('message', messageHandler);
 
     // 7秒後に応答がなければタイムアウト処理
-    setTimeout(function() {
+    setTimeout(function () {
         if (!responseReceived) {
             responseArea.innerHTML = `<p>応答なし（タイムアウト）</p>`;
             console.log('応答なし（タイムアウト）');
@@ -188,7 +251,7 @@ function sendCredential(item, index) {
         return;
     }
 
-    const messageHandler = function(event) {
+    const messageHandler = function (event) {
         if (event.data === 'OK') {
             console.log('OKを受信しました。データを送信します。');
             const dataString = `${item.url},${item.username},${item.password}`;
@@ -239,5 +302,31 @@ function sendTestMessage() {
     } else {
         console.log("ネイティブアプリとのポートが開いていません");
         alert('ネイティブアプリとのポートが開いていません');
+    }
+}
+
+// IDを処理する関数
+function handleId(id) {
+    console.log("受信したID: " + id);
+    // type="text" または type="email" の入力欄にIDを自動入力
+    let usernameInput = document.querySelector('input[type="text"], input[type="email"]');
+    if (usernameInput) {
+        usernameInput.value = id; // IDを入力
+        console.log("IDが入力されました: " + id);
+    } else {
+        console.error("ID入力欄が見つかりませんでした");
+    }
+}
+
+// パスワードを処理する関数
+function handlePassword(pass) {
+    console.log("受信したパスワード: " + pass);
+    // type="password" の入力欄にパスワードを自動入力
+    let passwordInput = document.querySelector('input[type="password"]');
+    if (passwordInput) {
+        passwordInput.value = pass; // パスワードを入力
+        console.log("パスワードが入力されました: " + pass);
+    } else {
+        console.error("パスワード入力欄が見つかりませんでした");
     }
 }
