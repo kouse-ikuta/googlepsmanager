@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("blutoothplus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0d8e9ce85596a2fa3a9f334c3629a2fb8538298")]
 [assembly: System.Reflection.AssemblyProductAttribute("blutoothplus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("blutoothplus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

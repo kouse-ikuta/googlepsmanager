@@ -18,3 +18,4 @@ C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Debug\net6.0\refint\bl
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Debug\net6.0\blutoothplus.pdb
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Debug\net6.0\blutoothplus.genruntimeconfig.cache
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Debug\net6.0\ref\blutoothplus.dll
+C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Debug\net6.0\blutoothplus.sourcelink.json

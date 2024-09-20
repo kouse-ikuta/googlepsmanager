@@ -12,6 +12,7 @@ C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoot
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoothplus.AssemblyInfoInputs.cache
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoothplus.AssemblyInfo.cs
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoothplus.csproj.CoreCompileInputs.cache
+C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoothplus.sourcelink.json
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutooth.19DE42AE.Up2Date
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\blutoothplus.dll
 C:\Users\kouse\source\repos\blutoothplus\blutoothplus\obj\Release\net6.0\refint\blutoothplus.dll

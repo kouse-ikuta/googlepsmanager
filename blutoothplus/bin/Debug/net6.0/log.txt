@@ -40,3 +40,14 @@ Bluetooth接続に失敗しました: System.Net.Internals.SocketExceptionFactor
    at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
    at Program.ConnectToServer(String targetAddress, Guid serviceUuid) in C:\Users\kouse\source\repos\blutoothplus\blutoothplus\Program.cs:line 101
 デバイス B4:70:64:DD:AB:89 にBluetoothで接続しました
+2024/09/20 18:39:02 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
+2024/09/20 18:39:12 [Debug] Client connected from 127.0.0.1:55762 
+2024/09/20 18:39:12 [Debug] 548 bytes read 
+2024/09/20 18:39:13 [Debug] Building Hybi-14 Response 
+2024/09/20 18:39:13 [Debug] Sent 129 bytes 
+WebSocket接続が確立されました
+C#プログラムが起動しました。Enterキーで終了します。
+リソースを解放しました。
+2024/09/20 19:03:25 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+C#プログラムが起動しました。Enterキーで終了します。
