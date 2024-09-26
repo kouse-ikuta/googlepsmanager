@@ -2,10 +2,74 @@
 let socket; // WebSocketの接続を保持する変数
 let port;   // Native Messagingのポートを保持する変数
 
-// メッセージを画面に表示する関数（必要に応じて）
-function appendMessage(text) {
-    console.log(text); // デバッグ用にコンソールにも出力
+// デバイスリストをHTMLに表示する関数
+function displayDeviceList(devices) {
+    const deviceListElement = document.getElementById('deviceList'); // デバイスリスト表示エリアを取得
+    deviceListElement.innerHTML = ''; // 既存のリストをクリア
+    devices.forEach((device, index) => {
+        const deviceItem = document.createElement('div');
+        deviceItem.className = 'device-item';
+
+        const nameP = document.createElement('p');
+        nameP.textContent = `Name: ${device.name}`;
+
+        const addressP = document.createElement('p');
+        addressP.textContent = `Address: ${device.address}`;
+
+        const selectButton = document.createElement('button');
+        selectButton.className = 'select-button';
+        selectButton.textContent = '選択';
+        selectButton.addEventListener('click', function () {
+            sendMacAddress(device.address); // MACアドレスを送信
+        });
+
+        deviceItem.appendChild(nameP);
+        deviceItem.appendChild(addressP);
+        deviceItem.appendChild(selectButton);
+
+        deviceListElement.appendChild(deviceItem);
+    });
 }
+
+// WebSocketで受信したメッセージを解析してデバイスリストを表示する関数
+function processDevicesMessage(message) {
+    const devices = message.split('\n').map(line => {
+        const nameMatch = line.match(/Name:\s*(.+?),/);
+        const addressMatch = line.match(/Address:\s*([0-9A-F]{12})/i);
+        if (nameMatch && addressMatch) {
+            return { name: nameMatch[1], address: addressMatch[1] };
+        }
+        return null;
+    }).filter(device => device !== null); // 有効なデバイスのみ保持
+
+    if (devices.length > 0) {
+        displayDeviceList(devices); // デバイスリストをHTMLに表示
+    } else {
+        console.error("デバイスが見つかりませんでした");
+    }
+}
+
+// 選択されたMACアドレスを送信する関数
+function sendMacAddress(address) {
+    // アドレスを2桁ごとに":"を入れてフォーマット
+    const formattedAddress = address.match(/.{1,2}/g).join(':');
+    const macAddress = `MAC:${formattedAddress}`;
+
+    console.log("送信するMACアドレス: " + macAddress);
+
+    // WebSocketを使ってMACアドレスを送信
+    if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send(macAddress);
+        console.log("WebSocket経由でMACアドレスを送信しました: " + macAddress);
+        const responseArea = document.getElementById('responseArea');
+        responseArea.innerHTML = `<p>選択されたMACアドレス: ${macAddress}</p>`;
+    } else {
+        console.error("WebSocketが接続されていません");
+    }
+}
+
+
+
 
 // ページが読み込まれたときのイベントハンドラ
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('textForm'); // フォームを取得
     const responseArea = document.getElementById('responseArea'); // 応答表示エリア
     const input = document.getElementById('inputButton'); // 自動入力
-
+    const sendButton = document.getElementById('sendButton'); // 送信ボタン
     // C#プログラムを起動し、WebSocket接続を開始
     startBluetoothBridge();
 
@@ -37,7 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 usernameP.textContent = `ID: ${item.username}`;
 
                 const passwordP = document.createElement('p');
-                passwordP.textContent = `Password: ${item.password}`;
+
+                // パスワードの長さに応じて米印に変換
+                const hiddenPassword = '*'.repeat(item.password.length);
+
+                passwordP.textContent = `Password: ${hiddenPassword}`;
 
                 const sendButton = document.createElement('button');
                 sendButton.className = 'send-button';
@@ -67,9 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // テストメッセージボタンのクリックイベント
+    /*
     testMessageButton.addEventListener('click', function () {
         sendTestMessage();
     });
+    */
 
     // 自動入力ボタンのクリックイベント
     input.addEventListener('click', function () {
@@ -81,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (socket && socket.readyState === WebSocket.OPEN) {
                 socket.send(currentUrl); // WebSocketでURLを送信
                 console.log("WebSocket経由でテストメッセージを送信しました: " + currentUrl);
-                alert('テストメッセージを送信しました');
+                alert('urlを送信し、確認中です。');
             } else {
                 console.log("WebSocketが接続されていません");
                 alert('WebSocketが接続されていません');
@@ -130,6 +200,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
             socket.addEventListener('message', messageHandler);
         });
+    });
+
+    // 送信ボタンのクリックイベント
+    sendButton.addEventListener('click', function () {
+        const urlInput = document.getElementById('urlInput').value;
+        const idInput = document.getElementById('idInput').value;
+        const passInput = document.getElementById('passInput').value;
+
+        if (!urlInput || !idInput || !passInput) {
+            alert('URL、ID、パスワードを全て入力してください');
+            return;
+        }
+
+        // WebSocketが開いているか確認
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            // まず最初にchooseを送信
+            const chooseMessage = 'choose';
+            socket.send(chooseMessage);
+            console.log("WebSocket経由でchooseメッセージを送信しました: " + chooseMessage);
+
+            // chooseの応答を待つ
+            const messageHandler = function (event) {
+                if (event.data === 'OK') {
+                    console.log('OKを受信しました。データを送信します。');
+
+                    // URL, ID, パスワードをカンマで連結して送信
+                    const dataString = `${urlInput},${idInput},${passInput}`;
+                    socket.send(dataString);
+                    console.log("WebSocket経由でデータを送信しました: " + dataString);
+
+                    // メッセージリスナーを削除
+                    socket.removeEventListener('message', messageHandler);
+                } else {
+                    console.error('OKを受信できませんでした。送信をキャンセルします。');
+                    alert('サーバーからOKが返されませんでした。送信がキャンセルされました。');
+                    socket.removeEventListener('message', messageHandler);
+                }
+            };
+
+            socket.addEventListener('message', messageHandler);
+
+
+        } else {
+            console.error('WebSocketが接続されていません');
+            alert('WebSocketが接続されていません。');
+        }
+    });
+
+    document.getElementById('showFormButton').addEventListener('click', function () {
+        const form = document.getElementById('textForm');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none'; // フォームの表示/非表示を切り替え
     });
 
 
@@ -183,19 +304,24 @@ function waitForResponse(responseArea) {
 
 // C#プログラムを起動する関数
 function startBluetoothBridge() {
+
+    if (port) {
+        // 既にNative Messagingのポートが開いている場合、再接続を防ぐ
+        console.log('既にNative Messagingのポートが開いています');
+        return;
+    }
+
     try {
         var hostName = "com.example.bluetooth_bridge"; // ホスト名を指定
         port = chrome.runtime.connectNative(hostName); // ネイティブホストに接続
 
         setTimeout(function () {
             console.log("3秒後にWebSocket接続を開始します...");
-            appendMessage("3秒後にWebSocket接続を開始します...");
             connectWebSocket(); // 3秒後にWebSocket接続を開始
         }, 3000);
 
         port.onDisconnect.addListener(function () {
             console.log("C#プログラムが終了しました");
-            appendMessage("C#プログラムが終了しました");
             port = null;
         });
 
@@ -207,35 +333,42 @@ function startBluetoothBridge() {
         });
 
         console.log('C#プログラムを起動しました');
-        appendMessage('C#プログラムを起動しました');
     } catch (e) {
         console.error("C#プログラムの起動に失敗しました: " + e.message);
-        appendMessage("C#プログラムの起動に失敗しました");
     }
 }
 
 // WebSocket接続を確立する関数
 function connectWebSocket() {
+
+    if (socket) {
+        // 既にWebSocketが接続されている場合、再接続を防ぐ
+        console.log('既にWebSocketが接続されています');
+        return;
+    }
+
     try {
         socket = new WebSocket('ws://127.0.0.1:8181'); // WebSocketサーバーに接続
 
         socket.onopen = function () {
             console.log('WebSocket接続が確立されました');
-            appendMessage('WebSocket接続が確立されました');
         };
 
         socket.onclose = function () {
             console.log('WebSocket接続が閉じられました');
-            appendMessage('WebSocket接続が閉じられました');
         };
 
         socket.onerror = function (error) {
             console.error('WebSocketエラー: ' + error.message);
-            appendMessage('WebSocketエラー: ' + error.message);
+        };
+
+        // メッセージ受信時の処理
+        socket.onmessage = function (event) {
+            console.log('WebSocketからのメッセージ: ' + event.data);
+            processDevicesMessage(event.data);
         };
     } catch (e) {
         console.error("WebSocket接続に失敗しました: " + e.message);
-        appendMessage("WebSocket接続に失敗しました");
     }
 }
 
@@ -284,6 +417,7 @@ function removeCredentialFromList(index) {
 }
 
 // テストメッセージを送信する関数
+/*
 function sendTestMessage() {
     const testMessage = "これはテストメッセージです";
 
@@ -304,29 +438,8 @@ function sendTestMessage() {
         alert('ネイティブアプリとのポートが開いていません');
     }
 }
+*/
 
-// IDを処理する関数
-function handleId(id) {
-    console.log("受信したID: " + id);
-    // type="text" または type="email" の入力欄にIDを自動入力
-    let usernameInput = document.querySelector('input[type="text"], input[type="email"]');
-    if (usernameInput) {
-        usernameInput.value = id; // IDを入力
-        console.log("IDが入力されました: " + id);
-    } else {
-        console.error("ID入力欄が見つかりませんでした");
-    }
-}
 
-// パスワードを処理する関数
-function handlePassword(pass) {
-    console.log("受信したパスワード: " + pass);
-    // type="password" の入力欄にパスワードを自動入力
-    let passwordInput = document.querySelector('input[type="password"]');
-    if (passwordInput) {
-        passwordInput.value = pass; // パスワードを入力
-        console.log("パスワードが入力されました: " + pass);
-    } else {
-        console.error("パスワード入力欄が見つかりませんでした");
-    }
-}
+
+
