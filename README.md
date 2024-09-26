@@ -1,1 +1,7 @@
-# google拡張機能用password manager
+# Passrink
+# 概要
+自動入力が可能なローカルホスト型のパスワードマネージャー
+
+# How To
+
+# 動作環境
